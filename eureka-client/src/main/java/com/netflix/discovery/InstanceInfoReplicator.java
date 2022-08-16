@@ -25,6 +25,10 @@ import java.util.concurrent.atomic.AtomicReference;
  *
  *   @author dliu
  */
+
+/**
+ * 更新本地实例信息并将其复制到远程服务器的任务，默认40s
+ */
 class InstanceInfoReplicator implements Runnable {
     private static final Logger logger = LoggerFactory.getLogger(InstanceInfoReplicator.class);
 

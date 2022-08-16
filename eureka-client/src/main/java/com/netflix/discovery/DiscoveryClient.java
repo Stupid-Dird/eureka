@@ -473,6 +473,9 @@ public class DiscoveryClient implements EurekaClient {
         }
 
         // finally, init the schedule tasks (e.g. cluster resolvers, heartbeat, instanceInfo replicator, fetch
+        /**
+         * 最后，初始化调度任务(例如:集群解析器、心跳、instanceInfo复制器、fetch)
+         */
         initScheduledTasks();
 
         try {
@@ -1451,6 +1454,9 @@ public class DiscoveryClient implements EurekaClient {
     /**
      * The heartbeat task that renews the lease in the given intervals.
      */
+    /**
+     * 心跳执行线程
+     */
     private class HeartbeatThread implements Runnable {
 
         public void run() {
@@ -1490,8 +1496,7 @@ public class DiscoveryClient implements EurekaClient {
     }
 
     /**
-     * The task that fetches the registry information at specified intervals.
-     *
+     * 任务以指定的时间间隔获取注册表信息。
      */
     class CacheRefreshThread implements Runnable {
         public void run() {
@@ -1500,6 +1505,9 @@ public class DiscoveryClient implements EurekaClient {
     }
 
     @VisibleForTesting
+    /**
+     *
+     */
     void refreshRegistry() {
         try {
             boolean isFetchingRemoteRegionRegistries = isFetchingRemoteRegionRegistries();
